@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "SMSRESPONSE")
-@XmlType(propOrder = { "username", "orgcode", "uid", "responseItemList" })
+@XmlType(propOrder = { "username", "orgcode", "uid", "error" , "responseItemList" })
 public class SMSResponse {
 	
 	private String username = "";
@@ -18,6 +18,8 @@ public class SMSResponse {
 	private String orgcode = "";
 	
 	private String uid = "";
+	
+	private String error = "";
 
 	private List<ResponseItem> responseItemList = new ArrayList<ResponseItem>();
 	
@@ -67,6 +69,15 @@ public class SMSResponse {
 	 */
 	public void setResponseItemList(List<ResponseItem> responseItemList) {
 		this.responseItemList = responseItemList;
+	}
+
+	@XmlElement(name = "ERROR")
+	public String getError() {
+		return error;
+	}
+
+	public void setError(String error) {
+		this.error = error;
 	}
 
 }

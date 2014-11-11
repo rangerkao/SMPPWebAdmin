@@ -50,6 +50,10 @@ public class SmsAction extends ActionSupport {
 			
 			logger.debug("Raw Input = " + JSONUtil.serialize(this.reqItem));
 
+			//20141024修改，Remark未填入資料會產生錯誤
+			if(this.reqItem.getRemark()==null||"".equals(this.reqItem.getRemark()))
+				this.reqItem.setRemark(" ");
+			
 			String requestXML = this.encodeRequest(this.reqItem);
 
 			logger.debug("XML Input = " + requestXML);
@@ -58,11 +62,11 @@ public class SmsAction extends ActionSupport {
 			String responseXML = this.smsService.send(requestXML);
 
 			logger.debug("Raw  Output = " + responseXML);
+			if(!"".equals(responseXML)){
+					this.resItem  = this.decodeResponse(responseXML);
 			
-			this.resItem  = this.decodeResponse(responseXML);
-			
-			responseXML = this.encodeResponse(this.resItem);
-			
+					responseXML = this.encodeResponse(this.resItem);
+			}
 			logger.debug("XML Output = " + responseXML);
 
 			return SUCCESS;

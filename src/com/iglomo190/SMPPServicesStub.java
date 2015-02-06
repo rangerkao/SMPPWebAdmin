@@ -5,7 +5,7 @@
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
  */
-        package com.iglomo.sms.webservice.client;
+        package com.iglomo190;
 
         
 
@@ -49,7 +49,7 @@
                    __operation = new org.apache.axis2.description.OutInAxisOperation();
                 
 
-            __operation.setName(new javax.xml.namespace.QName("http://smpp.infotech.com", "sendSMPP"));
+            __operation.setName(new javax.xml.namespace.QName("http://iglomo.com:8080", "sendSMPP"));
 	    _service.addOperation(__operation);
 	    
 
@@ -96,7 +96,7 @@
         _serviceClient.getOptions().setUseSeparateListener(useSeparateListener);
         
             //Set the soap version
-            _serviceClient.getOptions().setSoapVersionURI(org.apache.axiom.soap.SOAP11Constants.SOAP_ENVELOPE_NAMESPACE_URI);
+            _serviceClient.getOptions().setSoapVersionURI(org.apache.axiom.soap.SOAP12Constants.SOAP_ENVELOPE_NAMESPACE_URI);
         
     
     }
@@ -106,7 +106,7 @@
      */
     public SMPPServicesStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://192.168.10.190:8080/axis2/services/SMPPServices.SMPPServicesHttpSoap11Endpoint/" );
+                    this(configurationContext,"http://192.168.10.190:8080/axis2/services/SMPPServices.SMPPServicesHttpSoap12Endpoint/" );
                 
     }
 
@@ -115,7 +115,7 @@
      */
     public SMPPServicesStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://192.168.10.190:8080/axis2/services/SMPPServices.SMPPServicesHttpSoap11Endpoint/" );
+                    this("http://192.168.10.190:8080/axis2/services/SMPPServices.SMPPServicesHttpSoap12Endpoint/" );
                 
     }
 
@@ -132,16 +132,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see com.iglomo.SMPPServices#sendSMPP
+                     * @see com.iglomo190.SMPPServices#sendSMPP
                      * @param sendSMPP0
                     
                      */
 
                     
 
-                            public  com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPPResponse sendSMPP(
+                            public  com.iglomo190.SMPPServicesStub.SendSMPPResponse sendSMPP(
 
-                            com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPP sendSMPP0)
+                            com.iglomo190.SMPPServicesStub.SendSMPP sendSMPP0)
                         
 
                     throws java.rmi.RemoteException
@@ -169,10 +169,10 @@
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     sendSMPP0,
-                                                    optimizeContent(new javax.xml.namespace.QName("http://smpp.infotech.com",
-                                                    "sendSMPP")), new javax.xml.namespace.QName("http://smpp.infotech.com",
+                                                    optimizeContent(new javax.xml.namespace.QName("http://iglomo.com:8080",
+                                                    "sendSMPP")), new javax.xml.namespace.QName("http://iglomo.com:8080",
                                                     "sendSMPP"));
-                            
+                                                
         //adding SOAP soap_headers
          _serviceClient.addHeadersToEnvelope(env);
         // set the message context with that soap envelope
@@ -192,11 +192,11 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPPResponse.class,
+                                             com.iglomo190.SMPPServicesStub.SendSMPPResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPPResponse)object;
+                                        return (com.iglomo190.SMPPServicesStub.SendSMPPResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
@@ -254,15 +254,15 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see com.iglomo.SMPPServices#startsendSMPP
+                * @see com.iglomo190.SMPPServices#startsendSMPP
                     * @param sendSMPP0
                 
                 */
                 public  void startsendSMPP(
 
-                 com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPP sendSMPP0,
+                 com.iglomo190.SMPPServicesStub.SendSMPP sendSMPP0,
 
-                  final com.iglomo.sms.webservice.client.SMPPServicesCallbackHandler callback)
+                  final com.iglomo190.SMPPServicesCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
@@ -286,8 +286,8 @@
                                                     
                                                     env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()),
                                                     sendSMPP0,
-                                                    optimizeContent(new javax.xml.namespace.QName("http://smpp.infotech.com",
-                                                    "sendSMPP")), new javax.xml.namespace.QName("http://smpp.infotech.com",
+                                                    optimizeContent(new javax.xml.namespace.QName("http://iglomo.com:8080",
+                                                    "sendSMPP")), new javax.xml.namespace.QName("http://iglomo.com:8080",
                                                     "sendSMPP"));
                                                 
         // adding SOAP soap_headers
@@ -306,10 +306,10 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPPResponse.class,
+                                                                         com.iglomo190.SMPPServicesStub.SendSMPPResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
                                         callback.receiveResultsendSMPP(
-                                        (com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPPResponse)object);
+                                        (com.iglomo190.SMPPServicesStub.SendSMPPResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
                                 callback.receiveErrorsendSMPP(e);
@@ -429,7 +429,7 @@
         }
         return false;
     }
-     //http://106.186.120.118:8080/axis2/services/SMPPServices.SMPPServicesHttpSoap12Endpoint/
+     //http://192.168.10.190:8080/axis2/services/SMPPServices.SMPPServicesHttpSoap12Endpoint/
         public static class ExtensionMapper{
 
           public static java.lang.Object getTypeObject(java.lang.String namespaceURI,
@@ -446,27 +446,27 @@
         implements org.apache.axis2.databinding.ADBBean{
         
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
-                "http://smpp.infotech.com",
+                "http://iglomo.com:8080",
                 "sendSMPP",
-                "igl");
+                "ns1");
 
             
 
                         /**
-                        * field for Args0
+                        * field for S
                         */
 
                         
-                                    protected java.lang.String localArgs0 ;
+                                    protected java.lang.String localS ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
                            *   in the serialized XML
                            */
-                           protected boolean localArgs0Tracker = false ;
+                           protected boolean localSTracker = false ;
 
-                           public boolean isArgs0Specified(){
-                               return localArgs0Tracker;
+                           public boolean isSSpecified(){
+                               return localSTracker;
                            }
 
                            
@@ -475,20 +475,20 @@
                            * Auto generated getter method
                            * @return java.lang.String
                            */
-                           public  java.lang.String getArgs0(){
-                               return localArgs0;
+                           public  java.lang.String getS(){
+                               return localS;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param Args0
+                               * @param param S
                                */
-                               public void setArgs0(java.lang.String param){
-                            localArgs0Tracker = true;
+                               public void setS(java.lang.String param){
+                            localSTracker = true;
                                    
-                                            this.localArgs0=param;
+                                            this.localS=param;
                                     
 
                                }
@@ -539,7 +539,7 @@
                   if (serializeType){
                
 
-                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://smpp.infotech.com");
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://iglomo.com:8080");
                    if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
                            namespacePrefix+":sendSMPP",
@@ -552,12 +552,12 @@
 
                
                    }
-                if (localArgs0Tracker){
-                                    namespace = "http://smpp.infotech.com";
-                                    writeStartElement(null, namespace, "args0", xmlWriter);
+                if (localSTracker){
+                                    namespace = "http://iglomo.com:8080";
+                                    writeStartElement(null, namespace, "s", xmlWriter);
                              
 
-                                          if (localArgs0==null){
+                                          if (localS==null){
                                               // write the nil attribute
                                               
                                                      writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
@@ -565,7 +565,7 @@
                                           }else{
 
                                         
-                                                   xmlWriter.writeCharacters(localArgs0);
+                                                   xmlWriter.writeCharacters(localS);
                                             
                                           }
                                     
@@ -577,7 +577,7 @@
         }
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://smpp.infotech.com")){
+            if(namespace.equals("http://iglomo.com:8080")){
                 return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
@@ -755,12 +755,12 @@
                  java.util.ArrayList elementList = new java.util.ArrayList();
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
-                 if (localArgs0Tracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://smpp.infotech.com",
-                                                                      "args0"));
+                 if (localSTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://iglomo.com:8080",
+                                                                      "s"));
                                  
-                                         elementList.add(localArgs0==null?null:
-                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localArgs0));
+                                         elementList.add(localS==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localS));
                                     }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -840,7 +840,7 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://smpp.infotech.com","args0").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://iglomo.com:8080","s").equals(reader.getName())){
                                 
                                        nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                        if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
@@ -848,7 +848,7 @@
 
                                     java.lang.String content = reader.getElementText();
                                     
-                                              object.setArgs0(
+                                              object.setS(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                             
                                        } else {
@@ -893,7 +893,7 @@
         implements org.apache.axis2.databinding.ADBBean{
         
                 public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
-                "http://smpp.infotech.com",
+                "http://iglomo.com:8080",
                 "sendSMPPResponse",
                 "ns1");
 
@@ -986,7 +986,7 @@
                   if (serializeType){
                
 
-                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://smpp.infotech.com");
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://iglomo.com:8080");
                    if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
                        writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
                            namespacePrefix+":sendSMPPResponse",
@@ -1000,7 +1000,7 @@
                
                    }
                 if (local_returnTracker){
-                                    namespace = "http://smpp.infotech.com";
+                                    namespace = "http://iglomo.com:8080";
                                     writeStartElement(null, namespace, "return", xmlWriter);
                              
 
@@ -1024,7 +1024,7 @@
         }
 
         private static java.lang.String generatePrefix(java.lang.String namespace) {
-            if(namespace.equals("http://smpp.infotech.com")){
+            if(namespace.equals("http://iglomo.com:8080")){
                 return "ns1";
             }
             return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
@@ -1203,7 +1203,7 @@
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
                  if (local_returnTracker){
-                                      elementList.add(new javax.xml.namespace.QName("http://smpp.infotech.com",
+                                      elementList.add(new javax.xml.namespace.QName("http://iglomo.com:8080",
                                                                       "return"));
                                  
                                          elementList.add(local_return==null?null:
@@ -1287,7 +1287,7 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://smpp.infotech.com","return").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://iglomo.com:8080","return").equals(reader.getName())){
                                 
                                        nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                        if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
@@ -1336,12 +1336,12 @@
         }
            
     
-            private  org.apache.axiom.om.OMElement  toOM(com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPP param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(com.iglomo190.SMPPServicesStub.SendSMPP param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPP.MY_QNAME,
+                             return param.getOMElement(com.iglomo190.SMPPServicesStub.SendSMPP.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -1350,12 +1350,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPPResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(com.iglomo190.SMPPServicesStub.SendSMPPResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPPResponse.MY_QNAME,
+                             return param.getOMElement(com.iglomo190.SMPPServicesStub.SendSMPPResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -1365,14 +1365,14 @@
             }
         
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPP param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, com.iglomo190.SMPPServicesStub.SendSMPP param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
-                                                    	
+
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPP.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(com.iglomo190.SMPPServicesStub.SendSMPP.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -1402,16 +1402,16 @@
 
         try {
         
-                if (com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPP.class.equals(type)){
+                if (com.iglomo190.SMPPServicesStub.SendSMPP.class.equals(type)){
                 
-                           return com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPP.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return com.iglomo190.SMPPServicesStub.SendSMPP.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPPResponse.class.equals(type)){
+                if (com.iglomo190.SMPPServicesStub.SendSMPPResponse.class.equals(type)){
                 
-                           return com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPPResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return com.iglomo190.SMPPServicesStub.SendSMPPResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }

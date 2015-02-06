@@ -4,21 +4,25 @@ import java.rmi.RemoteException;
 
 import org.apache.axis2.AxisFault;
 
+import com.iglomo190.SMPPServicesStub;
+import com.iglomo190.SMPPServicesStub.SendSMPP;
+import com.iglomo190.SMPPServicesStub.SendSMPPResponse;
+
 /*import com.infotech.smpp.SMPPServicesStub;
 import com.infotech.smpp.SMPPServicesStub.SendSMPP;
 import com.infotech.smpp.SMPPServicesStub.SendSMPPResponse;*/
+
 
 /*import com.iglomo.sms199.SMPPServicesStub;
 import com.iglomo.sms199.SMPPServicesStub.SendSMPP;
 import com.iglomo.sms199.SMPPServicesStub.SendSMPPResponse;*/
 
-import com.iglomo.SMPPServicesStub;
-import com.iglomo.SMPPServicesStub.SendSMPP;
-import com.iglomo.SMPPServicesStub.SendSMPPResponse;
 
-/*import com.iglomo.sms.webservice.client.SMPPServicesStub;
-import com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPP;
-import com.iglomo.sms.webservice.client.SMPPServicesStub.SendSMPPResponse;*/
+/*import com.iglomo.SMPPServicesStub;
+import com.iglomo.SMPPServicesStub.SendSMPP;
+import com.iglomo.SMPPServicesStub.SendSMPPResponse;*/
+
+
 
 
 public class SmsServiceImpl implements SmsService {
@@ -33,7 +37,8 @@ public class SmsServiceImpl implements SmsService {
 		
 		SendSMPP data = new SendSMPP();
 		
-		data.setArgs0( requestXML);
+		data.setS(requestXML);
+		//data.setArgs0( requestXML);
 		
 		SendSMPPResponse smppResponse = this.wsClient.sendSMPP( data);
 		

@@ -45,56 +45,7 @@ public class SmsAction extends ActionSupport {
 	public static List<String> exclusive = new ArrayList<String>();
 	
 	public static void setex(){
-		exclusive.add("886989090000");
-		exclusive.add("886989090005");
-		exclusive.add("886989090006");
-		exclusive.add("886989090007");
-		exclusive.add("886989090008");
-		exclusive.add("886989090009");
-		exclusive.add("886989090010");
-		exclusive.add("886989090012");
-		exclusive.add("886989090017");
-		exclusive.add("886989090019");
-		exclusive.add("886989090020");
-		exclusive.add("886989090022");
-		exclusive.add("886989090023");
-		exclusive.add("886989090025");
-		exclusive.add("886989090026");
-		exclusive.add("886989090029");
-		exclusive.add("886989090030");
-		exclusive.add("886989090033");
-		exclusive.add("886989090034");
-		exclusive.add("886989090035");
-		exclusive.add("886989090037");
-		exclusive.add("886989090039");
-		exclusive.add("886989090046");
-		exclusive.add("886989090047");
-		exclusive.add("886989090051");
-		exclusive.add("886989090052");
-		exclusive.add("886989090053");
-		exclusive.add("886989090055");
-		exclusive.add("886989090056");
-		exclusive.add("886989090057");
-		exclusive.add("886989090058");
-		exclusive.add("886989090059");
-		exclusive.add("886989090061");
-		exclusive.add("886989090063");
-		exclusive.add("886989090066");
-		exclusive.add("886989090069");
-		exclusive.add("886989090072");
-		exclusive.add("886989090073");
-		exclusive.add("886989090074");
-		exclusive.add("886989090075");
-		exclusive.add("886989090076");
-		exclusive.add("886989090078");
-		exclusive.add("886989090080");
-		exclusive.add("886989090082");
-		exclusive.add("886989090083");
-		exclusive.add("886989090089");
-		exclusive.add("886989090092");
-		exclusive.add("886989090095");
-		exclusive.add("886989090098");
-		exclusive.add("886989090099");
+
 	}
 	
 	
@@ -114,7 +65,7 @@ public class SmsAction extends ActionSupport {
 			for(int j=4-t.length();j>0;j--){
 				t="0"+t;
 			}
-			t="88698909"+t;
+			t="88698662"+t;
 			List<String> number=new ArrayList<String>();
 			if(!exclusive.contains(t))
 				number.add(t);

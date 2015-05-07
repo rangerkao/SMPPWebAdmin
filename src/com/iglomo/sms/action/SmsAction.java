@@ -30,6 +30,10 @@ import com.tecnick.htmlutils.htmlentities.HTMLEntities;
 
 @Namespace(value = "/sms")
 public class SmsAction extends ActionSupport {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static ExecutorService execService;
 	private static final Logger logger = Logger.getLogger(SmsAction.class);
 	private static Integer count;
@@ -44,14 +48,13 @@ public class SmsAction extends ActionSupport {
 
 	public static List<String> exclusive = new ArrayList<String>();
 	
-	public static void setex(){
-
+	public static void setExclusive(){
 	}
 	
 	
 	public static void main(String args[]) throws Exception{
 		
-		setex();
+		setExclusive();
 		
 		List<SMSRequest> lr = new ArrayList<SMSRequest>();
 		//double msisdnStart = 0989090000B,msisdnEnd = 0989099999L;
@@ -59,33 +62,34 @@ public class SmsAction extends ActionSupport {
 		starttime=System.currentTimeMillis();
 		count=0;
 		
-		for(int i =5000 ;i<10000;i++){
+		for(int i =600000 ;i<800000;i++){
 			
 			String t=String.valueOf(i);
-			for(int j=4-t.length();j>0;j--){
+			for(int j=6-t.length();j>0;j--){
 				t="0"+t;
 			}
-			t="88698662"+t;
+			t="886984"+t;
+			//t="886989235253";
 			List<String> number=new ArrayList<String>();
-			if(!exclusive.contains(t))
-				number.add(t);
+			if(exclusive.contains(t))
+				continue;
+				
+			number.add(t);
 			
 			RequestItem r = new RequestItem();
 			r.setSchedule("0");
-			r.setMessage("最近去日韓嗎?申辦中華電信代辦環球卡，上網每日最高只要499元，撥接日韓當地及打回台灣均比一般漫遊節省約50%。詳洽02-27197171");
+			r.setMessage("中華電信代辦環球卡：巴西、印度、俄漫遊大降價！上網17.41元/MB，接打當地電話15元/分，平均省61%。請洽02-27197171");
 			r.setCallee(number);
 			List<RequestItem> list = new ArrayList<RequestItem>();
 			list.add(r);
 			SMSRequest reqItem=new SMSRequest();
-			reqItem.setUsername("8529300001");
-			reqItem.setPassowrd("8529300001");
+			reqItem.setUsername("85266407171");
+			reqItem.setPassowrd("85266407171");
 			reqItem.setOrgcode("0");
 			reqItem.setRequestItemList(list);
 			lr.add(reqItem);
 		}
-		
-		
-		
+
 		
 		SmsAction sa = new SmsAction();
 		

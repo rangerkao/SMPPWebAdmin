@@ -4,9 +4,13 @@ import java.rmi.RemoteException;
 
 import org.apache.axis2.AxisFault;
 
-import com.iglomo190.SMPPServicesStub;
+import com.iglomo123.SMPPServicesStub;
+import com.iglomo123.SMPPServicesStub.SendSMPP;
+import com.iglomo123.SMPPServicesStub.SendSMPPResponse;
+
+/*import com.iglomo190.SMPPServicesStub;
 import com.iglomo190.SMPPServicesStub.SendSMPP;
-import com.iglomo190.SMPPServicesStub.SendSMPPResponse;
+import com.iglomo190.SMPPServicesStub.SendSMPPResponse;*/
 
 /*import com.infotech.smpp.SMPPServicesStub;
 import com.infotech.smpp.SMPPServicesStub.SendSMPP;

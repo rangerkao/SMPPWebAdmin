@@ -6,7 +6,7 @@
  * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
  */
 
-    package com.iglomo190;
+    package com.iglomo199;
 
     /**
      *  SMPPServicesCallbackHandler Callback class, Users can extend this class and implement
@@ -49,7 +49,7 @@
             * override this method for handling normal response from sendSMPP operation
             */
            public void receiveResultsendSMPP(
-                    com.iglomo190.SMPPServicesStub.SendSMPPResponse result
+                    com.iglomo199.SMPPServicesStub.SendSMPPResponse result
                         ) {
            }
 

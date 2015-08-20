@@ -5,7 +5,7 @@
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
  */
-        package com.iglomo;
+        package com.iglomo190;
 
         
 
@@ -103,7 +103,7 @@
      */
     public SMPPServicesStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
         
-                    this(configurationContext,"http://192.168.10.199:8080/axis2/services/SMPPServices.SMPPServicesHttpSoap11Endpoint/" );
+                    this(configurationContext,"http://192.168.10.190:8080/axis2/services/SMPPServices.SMPPServicesHttpSoap11Endpoint/" );
                 
     }
 
@@ -112,7 +112,7 @@
      */
     public SMPPServicesStub() throws org.apache.axis2.AxisFault {
         
-                    this("http://192.168.10.199:8080/axis2/services/SMPPServices.SMPPServicesHttpSoap11Endpoint/" );
+                    this("http://192.168.10.190:8080/axis2/services/SMPPServices.SMPPServicesHttpSoap11Endpoint/" );
                 
     }
 
@@ -129,16 +129,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see com.iglomo.SMPPServices#sendSMPP
+                     * @see com.iglomo190.SMPPServices#sendSMPP
                      * @param sendSMPP0
                     
                      */
 
                     
 
-                            public  com.iglomo.SMPPServicesStub.SendSMPPResponse sendSMPP(
+                            public  com.iglomo190.SMPPServicesStub.SendSMPPResponse sendSMPP(
 
-                            com.iglomo.SMPPServicesStub.SendSMPP sendSMPP0)
+                            com.iglomo190.SMPPServicesStub.SendSMPP sendSMPP0)
                         
 
                     throws java.rmi.RemoteException
@@ -189,11 +189,11 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             com.iglomo.SMPPServicesStub.SendSMPPResponse.class,
+                                             com.iglomo190.SMPPServicesStub.SendSMPPResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (com.iglomo.SMPPServicesStub.SendSMPPResponse)object;
+                                        return (com.iglomo190.SMPPServicesStub.SendSMPPResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
@@ -251,15 +251,15 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see com.iglomo.SMPPServices#startsendSMPP
+                * @see com.iglomo190.SMPPServices#startsendSMPP
                     * @param sendSMPP0
                 
                 */
                 public  void startsendSMPP(
 
-                 com.iglomo.SMPPServicesStub.SendSMPP sendSMPP0,
+                 com.iglomo190.SMPPServicesStub.SendSMPP sendSMPP0,
 
-                  final com.iglomo.SMPPServicesCallbackHandler callback)
+                  final com.iglomo190.SMPPServicesCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
@@ -303,10 +303,10 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         com.iglomo.SMPPServicesStub.SendSMPPResponse.class,
+                                                                         com.iglomo190.SMPPServicesStub.SendSMPPResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
                                         callback.receiveResultsendSMPP(
-                                        (com.iglomo.SMPPServicesStub.SendSMPPResponse)object);
+                                        (com.iglomo190.SMPPServicesStub.SendSMPPResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
                                 callback.receiveErrorsendSMPP(e);
@@ -426,7 +426,7 @@
         }
         return false;
     }
-     //http://192.168.10.199:8080/axis2/services/SMPPServices.SMPPServicesHttpSoap11Endpoint/
+     //http://192.168.10.190:8080/axis2/services/SMPPServices.SMPPServicesHttpSoap11Endpoint/
         public static class ExtensionMapper{
 
           public static java.lang.Object getTypeObject(java.lang.String namespaceURI,
@@ -1333,12 +1333,12 @@
         }
            
     
-            private  org.apache.axiom.om.OMElement  toOM(com.iglomo.SMPPServicesStub.SendSMPP param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(com.iglomo190.SMPPServicesStub.SendSMPP param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(com.iglomo.SMPPServicesStub.SendSMPP.MY_QNAME,
+                             return param.getOMElement(com.iglomo190.SMPPServicesStub.SendSMPP.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -1347,12 +1347,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(com.iglomo.SMPPServicesStub.SendSMPPResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(com.iglomo190.SMPPServicesStub.SendSMPPResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(com.iglomo.SMPPServicesStub.SendSMPPResponse.MY_QNAME,
+                             return param.getOMElement(com.iglomo190.SMPPServicesStub.SendSMPPResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -1362,14 +1362,14 @@
             }
         
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, com.iglomo.SMPPServicesStub.SendSMPP param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, com.iglomo190.SMPPServicesStub.SendSMPP param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(com.iglomo.SMPPServicesStub.SendSMPP.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(com.iglomo190.SMPPServicesStub.SendSMPP.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -1399,16 +1399,16 @@
 
         try {
         
-                if (com.iglomo.SMPPServicesStub.SendSMPP.class.equals(type)){
+                if (com.iglomo190.SMPPServicesStub.SendSMPP.class.equals(type)){
                 
-                           return com.iglomo.SMPPServicesStub.SendSMPP.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return com.iglomo190.SMPPServicesStub.SendSMPP.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (com.iglomo.SMPPServicesStub.SendSMPPResponse.class.equals(type)){
+                if (com.iglomo190.SMPPServicesStub.SendSMPPResponse.class.equals(type)){
                 
-                           return com.iglomo.SMPPServicesStub.SendSMPPResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return com.iglomo190.SMPPServicesStub.SendSMPPResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }

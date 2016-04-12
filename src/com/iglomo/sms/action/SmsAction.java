@@ -107,7 +107,7 @@ public class SmsAction extends ActionSupport {
 
 			logger.debug("Raw Input = " + JSONUtil.serialize(this.reqItem));
 
-			//20141024�ק�ARemark����J��Ʒ|���Ϳ�~
+			//20141024
 			if(this.reqItem.getRemark()==null||"".equals(this.reqItem.getRemark()))
 				this.reqItem.setRemark(" ");
 			

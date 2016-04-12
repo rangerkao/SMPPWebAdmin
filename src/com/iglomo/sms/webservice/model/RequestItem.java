@@ -1,5 +1,6 @@
 package com.iglomo.sms.webservice.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.constraints.Pattern;
@@ -10,16 +11,18 @@ import javax.xml.bind.annotation.XmlType;
 import org.hibernate.validator.constraints.NotBlank;
 
 @XmlRootElement(name = "ITEM")
-@XmlType(propOrder = { "schedule", "isMultiple", "message", "callee" })
+@XmlType(propOrder = { "schedule", "isMultiple", "message", "callees" })
 public class RequestItem {
 	
-	@NotBlank(message="銝��箇征")
-	private List<String> callee;
+	@NotBlank(message="MUST HAVE")
+	private String callee;
 	
-	@NotBlank(message="銝��箇征")
+	private List<String> callees;
+	
+	@NotBlank(message="MUST HAVE")
 	private String isMultiple="0";
 	
-	@NotBlank(message="銝��箇征")
+	@NotBlank(message="MUST HAVE")
 	private String message="";
 	
 	public RequestItem() {
@@ -28,12 +31,12 @@ public class RequestItem {
 	}
 	
 	//@Pattern(message = "0�箏�������, �澆��旖YYY/MM/DD HH24:MI:SS,",regexp="0|([2][0-1][0-9][0-9]/(0?[1-9]|1[012]/[1-9]|[12][0-9]|3[01]))")
-	@NotBlank(message="銝��箇征")
+	@NotBlank(message="MUST HAVE")
 	private String schedule = "0";
 
 	@XmlElement(name = "PHONE")
-	public List<String> getCallee() {
-		return callee;
+	public List<String> getCallees() {
+		return callees;
 	}
 
 	@XmlElement(name = "MULTIPLE")
@@ -50,12 +53,25 @@ public class RequestItem {
 	public String getSchedule() {
 		return schedule;
 	}
+	
+	/*public String getCallee() {
+		return callee;
+	}*/
 
 	/**
 	 * @param calleeList the calleeList to set
 	 */
-	public void setCallee(List<String> callee) {
+	public void setCallee(String callee) {
 		this.callee = callee;
+		List<String> c = new ArrayList<String>();
+		for(String s:callee.split(",")){
+			c.add(s);
+		}
+		this.callees = c ;
+	}
+	
+	public void setCallees(List<String> callees) {
+		this.callees = callees;
 	}
 
 	/**

@@ -19,9 +19,8 @@
 		<s:password name="reqItem.passowrd" label="密碼" />
 		<s:textfield name="reqItem.orgcode" label="組織代碼" />
 		<s:textfield name="reqItem.requestItemList[0].schedule" label="排程時間" />
-		<s:textfield name="reqItem.requestItemList[0].callee" label="電話號碼" />
-		<s:textarea name="reqItem.requestItemList[0].message" label="簡訊內容"
-			cols="25" rows="5" />
+		<s:textarea name="reqItem.requestItemList[0].callee" label="電話號碼" cols="25" rows="5"/>
+		<s:textarea name="reqItem.requestItemList[0].message" label="簡訊內容" cols="25" rows="5" />
 		<s:textarea name="reqItem.remark" label="附註" cols="25" rows="1" />
 		<s:submit value="發送" />
 

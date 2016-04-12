@@ -22,7 +22,7 @@ public class SendList {
 
 			Set<String> prefile = new HashSet<String>();
 			//20150921 test data
-			prefile.add("88690501");//1.	0905010000~0905019999
+			/*prefile.add("88690501");//1.	0905010000~0905019999
 			prefile.add("88691000");//2.	0910000000~0910009999
 			prefile.add("88691100");//3.	0911000000~0911009999
 			prefile.add("88691200");//4.	0912000000~0912009999
@@ -43,16 +43,16 @@ public class SendList {
 			prefile.add("88697800");//19.	0978000000~0978009999
 			prefile.add("88698421");//20.	0984210000~0984219999
 			prefile.add("88698800");//21.	0988000000~0988009999
-
+*/
 			
 			Set<String> elseNumber = new HashSet<String>();
 			//自己
-			//elseNumber.add("886989235253");
+			elseNumber.add("886989235253");
 		
 
 			for(String SMSmsg:SMSmsgs){
 				//同號段區間門號
-				for(String s : prefile){
+				/*for(String s : prefile){
 					for(int i = 0 ; i <=9999 ; i ++){
 						String t=String.valueOf(i);
 						for(int j=4-t.length();j>0;j--){
@@ -60,10 +60,10 @@ public class SendList {
 						}
 						String phoneno=s+t;
 						
-						/*if(exc.inExcludeNumber(phoneno)){
+						if(exc.inExcludeNumber(phoneno)){
 							System.out.println("is excluded!");
 							continue;
-						}*/
+						}
 						
 						List<String> number=new ArrayList<String>();
 						number.add(phoneno);
@@ -80,7 +80,7 @@ public class SendList {
 						reqItem.setRequestItemList(list);
 						resultList.add(reqItem);
 					}
-				}
+				}*/
 				
 				//零散門號
 				for(String phoneno : elseNumber){
@@ -89,7 +89,7 @@ public class SendList {
 					RequestItem r = new RequestItem();
 					r.setSchedule("0");
 					r.setMessage(SMSmsg);
-					r.setCallee(number);
+					r.setCallees(number);
 					List<RequestItem> list = new ArrayList<RequestItem>();
 					list.add(r);
 					SMSRequest reqItem=new SMSRequest();

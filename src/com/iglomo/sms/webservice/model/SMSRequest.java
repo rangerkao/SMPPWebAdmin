@@ -16,13 +16,13 @@ import org.hibernate.validator.constraints.NotEmpty;
 @XmlType(propOrder = { "username", "passowrd", "orgcode", "requestItemList", "remark" })
 public class SMSRequest {
 	
-	@NotBlank(message="必填欄位")
+	@NotBlank(message="please enter content")
 	private String username = "";
 	
-	@NotBlank(message="必填欄位")
+	@NotBlank(message="please enter content")
 	private String passowrd = "";
 	
-	@NotBlank(message="必填欄位")
+	@NotBlank(message="please enter content")
 	private String orgcode = "";
 
 	@NotEmpty(message="At least one passenger is required")
@@ -70,8 +70,8 @@ public class SMSRequest {
 	 * @param passowrd
 	 *            the passowrd to set
 	 */
-	@NotBlank(message="必填欄位")
-	@Size(min=6, max=20, message="長度不可小於{min}，超過{max}")
+	@NotBlank(message="please enter content")
+	@Size(min=6, max=20, message="length between {min} and {max}")
 	public void setPassowrd(String passowrd) {
 		this.passowrd = passowrd;
 	}

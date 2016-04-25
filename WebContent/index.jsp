@@ -11,8 +11,9 @@
 <h1>Welcome!</h1>
 
 
-<p><a href="<s:url action='sms/input'  />" >SMS WEB UI</a></p>
-
+<p><a href="<s:url action='sms/input'  />" >SMS SEND</a></p>
+<p><a href="<s:url action='sms/control'  />" >SCHEDUALED SMS CONTROL</a></p>
+<p><a href="http://192.168.10.199:8080/smpp/" >SMS REPORT</a></p>
 
 </body>
 </html>

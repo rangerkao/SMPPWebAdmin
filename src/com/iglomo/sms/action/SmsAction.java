@@ -21,10 +21,13 @@ import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.json.JSONUtil;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import com.iglomo.sms.service.SmsService;
 import com.iglomo.sms.service.SmsServiceImpl;
 import com.iglomo.sms.webservice.model.RequestItem;
+import com.iglomo.sms.webservice.model.SMSContent;
 import com.iglomo.sms.webservice.model.SMSRequest;
 import com.iglomo.sms.webservice.model.SMSResponse;
 import com.opensymphony.xwork2.ActionSupport;
@@ -95,6 +98,11 @@ public class SmsAction extends ActionSupport {
 	@Override
 	@Action(value = "input", results = { @Result(name = "success", location = "sms-input.jsp") })
 	public String execute() throws Exception {
+		return SUCCESS;
+	}
+	
+	@Action(value = "control", results = { @Result(name = "success", location = "sms-control.jsp") })
+	public String control() throws Exception {
 		return SUCCESS;
 	}
 
@@ -195,6 +203,57 @@ public class SmsAction extends ActionSupport {
 
 	}
 	
+	public String input;
+	public String result;
+	public String sdate;
+	public String edate;
+	public String ndate;
+	public String phone;
+	public String querySMSStatus(){
+		
+		
+		
+		System.out.println(input);
+		result = "ajas result";
+		result = smsService.query(input,sdate,edate,phone);
+		return SUCCESS;
+	}
+	
+	
+	public String deleteSMS(){
+		JSONArray json =new JSONArray(input);
+		
+		List<SMSContent> list = new ArrayList<SMSContent>();
+		for(int i=0;i<json.length();i++){
+			JSONObject o=json.getJSONObject(i);
+			SMSContent s =new SMSContent();
+			s.setMsgid(o.getString("msgid"));
+			s.setSeq(o.getInt("seq"));
+			list.add(s);
+		}
+		result = smsService.delete(list);
+		
+		
+		return SUCCESS;
+	}
+	public String changeSMS(){
+		JSONArray json =new JSONArray(input);
+		
+		List<SMSContent> list = new ArrayList<SMSContent>();
+		for(int i=0;i<json.length();i++){
+			JSONObject o=json.getJSONObject(i);
+			SMSContent s =new SMSContent();
+			s.setMsgid(o.getString("msgid"));
+			s.setSeq(o.getInt("seq"));
+			list.add(s);
+		}
+		result = smsService.change(list, ndate);
+		
+		
+		return SUCCESS;
+	}
+	
+	
 	/**
 	 * @return the reqItem
 	 */
@@ -217,5 +276,68 @@ public class SmsAction extends ActionSupport {
 		return resItem;
 	}
 
+
+	public String getInput() {
+		return input;
+	}
+
+
+	public void setInput(String input) {
+		this.input = input;
+	}
+
+
+	public String getResult() {
+		return result;
+	}
+
+
+	public void setResult(String result) {
+		this.result = result;
+	}
+
+
+	public String getSdate() {
+		return sdate;
+	}
+
+
+	public void setSdate(String sdate) {
+		this.sdate = sdate;
+	}
+
+
+	public String getEdate() {
+		return edate;
+	}
+
+
+	public void setEdate(String edate) {
+		this.edate = edate;
+	}
+
+
+	public String getNdate() {
+		return ndate;
+	}
+
+
+	public void setNdate(String ndate) {
+		this.ndate = ndate;
+	}
+
+
+	public String getPhone() {
+		return phone;
+	}
+
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	
+	
+
+	
 
 }

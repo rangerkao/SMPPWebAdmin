@@ -13,5 +13,8 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="G:/MegaSync/download/jar/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="G:/MegaSync/download/jar/json-20140107.jar"/>
+	<classpathentry kind="lib" path="G:/MegaSync/download/jar/json-lib.jar.zip"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

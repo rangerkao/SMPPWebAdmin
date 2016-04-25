@@ -89,7 +89,7 @@ public class SendList {
 					RequestItem r = new RequestItem();
 					r.setSchedule("0");
 					r.setMessage(SMSmsg);
-					r.setCallees(number);
+					//r.setCallees(number);
 					List<RequestItem> list = new ArrayList<RequestItem>();
 					list.add(r);
 					SMSRequest reqItem=new SMSRequest();

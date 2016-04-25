@@ -25,7 +25,17 @@
 		<action name="index">
 			<result>/index.jsp</result>
 		</action>
-
 	</package>
+	
+	 <package name="ajax" extends="json-default">
+		<global-results>
+			<result type="json">
+	        	<param name="root">result</param>
+	        </result>
+		</global-results>
+		<action name="querySMSStatus" method="querySMSStatus" class="com.iglomo.sms.action.SmsAction"/>
+		<action name="deleteSMS" method="deleteSMS" class="com.iglomo.sms.action.SmsAction"/>
+		<action name="changeSMS" method="changeSMS" class="com.iglomo.sms.action.SmsAction"/>
+	</package> 
 
 </struts>

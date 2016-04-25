@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlType;
 import org.hibernate.validator.constraints.NotBlank;
 
 @XmlRootElement(name = "ITEM")
-@XmlType(propOrder = { "schedule", "isMultiple", "message", "callees" })
+@XmlType(propOrder = { "schedule", "isMultiple", "message", "callees", "callee"})
 public class RequestItem {
 	
 	@NotBlank(message="MUST HAVE")
@@ -54,25 +54,27 @@ public class RequestItem {
 		return schedule;
 	}
 	
-	/*public String getCallee() {
+	public String getCallee() {
 		return callee;
-	}*/
+	}
 
 	/**
 	 * @param calleeList the calleeList to set
 	 */
 	public void setCallee(String callee) {
 		this.callee = callee;
+		
 		List<String> c = new ArrayList<String>();
 		for(String s:callee.split(",")){
 			c.add(s);
 		}
 		this.callees = c ;
+		
 	}
 	
-	public void setCallees(List<String> callees) {
+	/*public void setCallees(List<String> callees) {
 		this.callees = callees;
-	}
+	}*/
 
 	/**
 	 * @param isMultiple the isMultiple to set

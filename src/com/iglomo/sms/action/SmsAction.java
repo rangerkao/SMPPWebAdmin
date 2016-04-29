@@ -123,6 +123,7 @@ public class SmsAction extends ActionSupport {
 
 			logger.debug("XML Input = " + requestXML);
 
+			
 			//Send SMS
 			String responseXML = this.smsService.send(requestXML);
 
@@ -134,6 +135,7 @@ public class SmsAction extends ActionSupport {
 			}
 			logger.debug("XML Output = " + responseXML);
 
+			 
 			return SUCCESS;
 	
 		} catch (Exception e) {

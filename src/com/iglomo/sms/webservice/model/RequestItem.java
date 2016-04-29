@@ -65,7 +65,7 @@ public class RequestItem {
 		this.callee = callee;
 		
 		List<String> c = new ArrayList<String>();
-		for(String s:callee.split(",")){
+		for(String s:callee.replaceAll("\\s", ",").replace(",,", ",").replace(",,", ",").split(",")){
 			c.add(s);
 		}
 		this.callees = c ;

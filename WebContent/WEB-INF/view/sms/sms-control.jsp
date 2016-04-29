@@ -8,6 +8,10 @@
 <title>簡訊發送服務控制</title>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
+
+$(document).ready(function(){
+
+});
 var leatherTypeList = [];
 	function querySMS(){
 		var acc = $("#account").val();
@@ -16,6 +20,10 @@ var leatherTypeList = [];
 		var phone = $("#phone").val();
 		if(!acc && !sdate && !edate){
 			alert("帳號、日期請至少輸入一項條件！");
+			return;
+		}
+		if((sdate && !edate) || (!sdate && edate)){
+			alert("日期不完整包含起迄！");
 			return;
 		}
 			
@@ -40,7 +48,10 @@ var leatherTypeList = [];
 		    		  							+"<td>status</td>"
 		    		  							+"<td></td>"
 		    		  						+"</tr>");
+		    	   var nDate = new Date();
 		    	  $.each(leatherTypeList, function(index, value){
+		    		  var vDate = new Date(value.schedule.substring(0, 4)+"/"+value.schedule.substring(4, 6)+"/"+value.schedule.substring(6, 8)
+		    				  +" "+value.schedule.substring(8, 10)+":"+value.schedule.substring(10, 12)+":"+value.schedule.substring(12, 14))
 		    		  $("#table").append(	"<tr>"
 		    		  							+"<td>"+value.msgid+"</td>"
 		    		  							+"<td>"+value.seq+"</td>"
@@ -48,7 +59,7 @@ var leatherTypeList = [];
 		    		  							+"<td>"+value.schedule+"</td>"
 		    		  							+"<td>"+value.msgbody+"</td>"
 		    		  							+"<td>"+value.status+"</td>"
-		    		  							+"<td><input type='checkbox' onclick='checkBoxClick(this,"+index+")'></td>"
+		    		  							+(vDate>nDate?"<td><input type='checkbox' onclick='checkBoxClick(this,"+index+")'></td>":"<td></td>")
 		    		  						+"</tr>");
 		    	  });
 		    	  
@@ -104,6 +115,12 @@ var leatherTypeList = [];
 	}
 	
 	function deleteSMS(obj,index){
+		
+		if(selected.length==0){
+			alert("未選擇要刪除的目標!");
+			return;
+		}
+		
 		var msg = 	"確定要刪除下列簡訊\n"
 					+"msgid        content        sendTime\n";
 		var selectedList = [];
@@ -139,6 +156,15 @@ var leatherTypeList = [];
 		
 	}
 	function changeSMS(obj,index){
+		if(!$("#ndate").val()){
+			alert("未輸入要更改的目標時間!");
+			return;
+		}
+		if(selected.length==0){
+			alert("未選擇更改的目標!");
+			return;
+		}
+		
 		var msg = 	"確定要變更下列簡訊\n"
 					+"msgid        content        sendTime\n";
 		var selectedList = [];
@@ -185,25 +211,37 @@ var leatherTypeList = [];
 	<input type="text" id="phone">
 	<br>
 	排程
-	<br>
 	<label>開始時間(yyyyMMddHHmiss)</label>
 	<input type="text" id="sdate">
 	<label>結束時間(yyyyMMddHHmiss)</label>
 	<input type="text" id="edate">
+	<button onclick="querySMS()">query</button>
 	<br>
 	<label>變更時間(yyyyMMddHHmiss)</label>
 	<input type="text" id="ndate">
-	<button onclick="querySMS()">query</button>
 	<button onclick="changeSMS()">change</button>
-	<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+	<br>
 	<button onclick="deleteSMS()" >delete</button>
 	<!-- <div>
 		<textarea rows="30" cols="20" id="result"></textarea>
 	</div> -->
 	<br>
-	<br>
+	
+	<div align="center" style="width: 100%">
+		<div align="left" style="width: 200px">
+			代號說明
+			<br>
+			傳送中:0,1,93,95,97,98,98
+			<br>
+			成功:2,9
+			<br>
+			失敗:3,4,5,7,8,94,96
+		</div>
+	
 	<table id="table" border="1" background="yellow" align="center">
 	</table>
+	</div>
+	
 	
 </body>
 </html>

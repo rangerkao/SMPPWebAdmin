@@ -84,6 +84,8 @@ public class SmsServiceImpl implements SmsService {
 				sql += "and phoneno='"+phone+"'  ";
 			}
 			
+			sql += " order by schedule desc  ";
+			
 			st = conn.createStatement();
 			
 			System.out.println("sql="+sql);

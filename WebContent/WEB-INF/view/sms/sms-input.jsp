@@ -65,7 +65,8 @@
 		palceholderSet($("#send_reqItem_passowrd"),"85292040071");
 		palceholderSet($("#send_reqItem_orgcode"),"85292040071");
 		
-		$("#send_reqItem_requestItemList_0__schedule").val(getDateString());
+		if(!$("#send_reqItem_requestItemList_0__schedule").val())
+			$("#send_reqItem_requestItemList_0__schedule").val(getDateString());
 
 	});
 </script>
@@ -84,8 +85,11 @@
 		<s:textarea name="reqItem.requestItemList[0].message" label="簡訊內容" cols="25" rows="5" />
 		<s:textarea name="reqItem.remark" label="附註" cols="25" rows="1" />
 		<s:submit value="發送" />
-
 	</s:form>
+
+	<br/>
+	<!-- 已預約時間	<input type="text" name="reqItem.requestItemList[0].schedule" disabled="disabled"></input>	 -->
+	<br/>
 
 	<p>
 		<s:if test="resItem != null">

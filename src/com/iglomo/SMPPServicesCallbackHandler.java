@@ -3,10 +3,10 @@
  * SMPPServicesCallbackHandler.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
+ * by the Apache Axis2 version: 1.6.3  Built on : Jun 27, 2015 (11:17:49 BST)
  */
 
-    package com.iglomo199;
+    package com.iglomo;
 
     /**
      *  SMPPServicesCallbackHandler Callback class, Users can extend this class and implement
@@ -49,7 +49,7 @@
             * override this method for handling normal response from sendSMPP operation
             */
            public void receiveResultsendSMPP(
-                    com.iglomo199.SMPPServicesStub.SendSMPPResponse result
+                    com.iglomo.SMPPServicesStub.SendSMPPResponse result
                         ) {
            }
 

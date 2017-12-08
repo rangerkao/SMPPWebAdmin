@@ -27,10 +27,16 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.iglomo.SMPPServicesStub;
+import com.iglomo.SMPPServicesStub.SendSMPP;
+import com.iglomo.SMPPServicesStub.SendSMPPResponse;
+
+/*import com.iglomo.sms.webservice.model.SMSContent;
+import com.iglomo1992.SMPPServicesStub;
+import com.iglomo1992.SMPPServicesStub.SendSMPP;
+import com.iglomo1992.SMPPServicesStub.SendSMPPResponse;*/
+
 import com.iglomo.sms.webservice.model.SMSContent;
-import com.iglomo199.SMPPServicesStub;
-import com.iglomo199.SMPPServicesStub.SendSMPP;
-import com.iglomo199.SMPPServicesStub.SendSMPPResponse;
 
 
 
@@ -43,6 +49,8 @@ public class SmsServiceImpl implements SmsService {
 	
 	@Override
 	public String send( String requestXML) throws RemoteException{
+		
+		System.out.println("send to iglomo199");
 		
 		this.wsClient = new SMPPServicesStub();
 		
@@ -69,7 +77,7 @@ public class SmsServiceImpl implements SmsService {
 		try {
 			Class.forName("org.postgresql.Driver");
 			//Connection conn = DriverManager.getConnection("jdbc:postgresql://127.0.0.1:5432/smppdb?charSet=UTF-8","smpper","SmIpp3r");
-			conn = DriverManager.getConnection("jdbc:postgresql://192.168.10.199:5432/smppdb?charSet=UTF-8","smpper","SmIpp3r");
+			conn = DriverManager.getConnection("jdbc:postgresql://10.42.1.199:5432/smppdb?charSet=UTF-8","smpper","SmIpp3r");
 			String sql = "select msgid,seq,schedule,phoneno,msgbody,tries,status,donetime,rspid,sendtime "
 					+ "from msgitem where 1=1 ";
 			
